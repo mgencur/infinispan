@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+    <feature name="infinispan-core-tests" version="${project.version}">
+        <bundle>wrap:mvn:org.infinispan/infinispan-core/${project.version}/jar/tests</bundle>
+    </feature>
+</features>

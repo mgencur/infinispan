@@ -68,7 +68,7 @@
             <directory>${project.basedir}/src/test/resources</directory>
             <filtering>true</filtering>
             <includes>
-               <include>test-features.xml</include>
+               <include>**/*</include>
             </includes>
          </testResource>
       </testResources>

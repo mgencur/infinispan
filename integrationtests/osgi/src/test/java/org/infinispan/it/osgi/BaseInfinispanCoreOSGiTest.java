@@ -20,7 +20,6 @@ public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTe
       final String TEST_UTILS_FEATURE_FILE = "file:///" + System.getProperty("basedir").replace("\\", "/") + "/target/test-classes/test-features.xml";
 
       return options(
-            // systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("DEBUG"),
             karafDistributionConfiguration()
                   .frameworkUrl(
                         maven()

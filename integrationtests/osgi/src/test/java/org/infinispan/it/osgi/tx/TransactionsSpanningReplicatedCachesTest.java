@@ -1,8 +1,10 @@
-package org.infinispan.it.osgi;
+package org.infinispan.it.osgi.tx;
 
 import org.infinispan.Cache;
 import org.infinispan.configuration.cache.CacheMode;
 import org.infinispan.configuration.cache.ConfigurationBuilder;
+import org.infinispan.it.osgi.BaseInfinispanCoreOSGiTest;
+import org.infinispan.it.osgi.Osgi;
 import org.infinispan.manager.CacheContainer;
 import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.remoting.rpc.RpcManagerImpl;
@@ -24,6 +26,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 /**
+ * Test cloned from {@link org.infinispan.tx.TransactionsSpanningReplicatedCachesTest} and modified for running in Karaf
+ * with JUnit.
+ *
  * @author mmarkus
  * @author mgencur
  */

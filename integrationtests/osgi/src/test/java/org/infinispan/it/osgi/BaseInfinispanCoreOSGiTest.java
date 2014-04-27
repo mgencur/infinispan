@@ -12,6 +12,11 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 
+/**
+ * @author mgencur
+ *
+ * TODO: Make infinispan-core:tests a bundle. Current approach fails in Karaf 3.0.0
+ */
 public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTest {
 
    @Configuration

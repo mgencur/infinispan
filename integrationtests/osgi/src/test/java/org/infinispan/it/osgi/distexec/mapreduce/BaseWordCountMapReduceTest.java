@@ -28,6 +28,8 @@ import static org.junit.Assert.assertTrue;
 /**
  * Test cloned from {@link org.infinispan.distexec.mapreduce.BaseWordCountMapReduceTest}
  * and modified for running in Karaf with JUnit.
+ *
+ * TODO: Remove code duplication.
  */
 public abstract class BaseWordCountMapReduceTest extends BaseInfinispanCoreOSGiTest {
 

@@ -29,6 +29,8 @@ import static org.junit.Assert.assertFalse;
  * Test cloned from {@link org.infinispan.tx.TransactionsSpanningReplicatedCachesTest} and modified for running in Karaf
  * with JUnit.
  *
+ * TODO: Remove code duplication.
+ *
  * @author mmarkus
  * @author mgencur
  */

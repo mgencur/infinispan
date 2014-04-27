@@ -38,6 +38,8 @@ import static org.junit.Assert.assertEquals;
  * Test cloned from {@link org.infinispan.notifications.cachelistener.CustomClassLoaderListenerTest}
  * and modified for running in Karaf with JUnit.
  *
+ * TODO: Remove code duplication.
+ *
  * @author ttarrant
  * @author jholusa
  * @author mgencur

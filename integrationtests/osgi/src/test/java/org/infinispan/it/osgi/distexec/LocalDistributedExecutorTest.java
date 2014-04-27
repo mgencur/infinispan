@@ -41,6 +41,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Test cloned from {@link org.infinispan.distexec.LocalDistributedExecutorTest} and modified for running in Karaf
  * with JUnit.
  *
+ * TODO: Remove code duplication.
+ *
  * @author amanukya
  * @author mgencur
  */

@@ -40,6 +40,14 @@
          <artifactId>junit</artifactId>
       </dependency>
       <dependency>
+         <groupId>${project.groupId}</groupId>
+         <artifactId>infinispan-cachestore-leveldb</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.fusesource.leveldbjni</groupId>
+         <artifactId>leveldbjni-all</artifactId>
+      </dependency>
+      <dependency>
          <groupId>org.apache.karaf</groupId>
          <artifactId>apache-karaf</artifactId>
          <type>zip</type>

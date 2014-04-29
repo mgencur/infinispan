@@ -19,6 +19,7 @@ import org.ops4j.pax.exam.spi.reactors.PerClass;
 
 import java.io.File;
 
+import static org.infinispan.it.osgi.util.IspnKarafOptions.*;
 import static org.ops4j.pax.exam.CoreOptions.junitBundles;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.options;
@@ -41,30 +42,11 @@ public class JniLevelDBStoreFunctionalTest extends BaseStoreFunctionalTestOSGi {
 
    @Configuration
    public Option[] config() throws Exception {
-      final String KARAF_VERSION = System.getProperty("version.karaf", "2.3.3");
-      final String TEST_UTILS_FEATURE_FILE = "file:///" + System.getProperty("basedir").replace("\\", "/") + "/target/test-classes/test-features.xml";
-
       return options(
-            karafDistributionConfiguration()
-                  .frameworkUrl(
-                        maven()
-                              .groupId("org.apache.karaf")
-                              .artifactId("apache-karaf")
-                              .type("zip")
-                              .version(KARAF_VERSION))
-                  .karafVersion(KARAF_VERSION),
-            features(maven().groupId("org.infinispan")
-                           .artifactId("infinispan-core")
-                           .type("xml")
-                           .classifier("features")
-                           .versionAsInProject(), "infinispan-core"),
-            features(maven().groupId("org.infinispan")
-                           .artifactId("infinispan-cachestore-leveldb")
-                           .type("xml")
-                           .classifier("features")
-                           .versionAsInProject(), "infinispan-cachestore-leveldb-jni"),
-            //install the infinispan-test-jar through a feature file as PAX-EXAM fails to deploy any jars that are not bundles
-            features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-tests"),
+            karafContainer(),
+            featureIspnCore(),
+            featureIspnCoreTests(),
+            featureLevelDbJni(),
             junitBundles(),
             keepRuntimeFolder()
       );

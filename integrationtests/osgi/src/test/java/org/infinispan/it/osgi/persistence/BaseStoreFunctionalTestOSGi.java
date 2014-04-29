@@ -8,6 +8,7 @@ import org.infinispan.configuration.cache.ConfigurationBuilder;
 import org.infinispan.configuration.cache.PersistenceConfigurationBuilder;
 import org.infinispan.container.DataContainer;
 import org.infinispan.container.entries.InternalCacheEntry;
+import org.infinispan.it.osgi.util.IspnKarafOptions;
 import org.infinispan.manager.CacheContainer;
 import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.test.CacheManagerCallable;
@@ -27,6 +28,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.Assert.assertNull;
+import static org.infinispan.it.osgi.util.IspnKarafOptions.featureIspnCore;
+import static org.infinispan.it.osgi.util.IspnKarafOptions.featureIspnCoreTests;
+import static org.infinispan.it.osgi.util.IspnKarafOptions.karafContainer;
 import static org.infinispan.test.TestingUtil.withCacheManager;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -38,35 +42,16 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 
-/**
- * Created with IntelliJ IDEA. User: mgencur Date: 4/28/14 Time: 10:27 AM To change this template use File | Settings |
- * File Templates.
- */
 public abstract class BaseStoreFunctionalTestOSGi {
 
    protected Set<String> cacheNames = new HashSet<String>();
 
    @Configuration
    public Option[] config() throws Exception {
-      final String KARAF_VERSION = System.getProperty("version.karaf", "2.3.3");
-      final String TEST_UTILS_FEATURE_FILE = "file:///" + System.getProperty("basedir").replace("\\", "/") + "/target/test-classes/test-features.xml";
-
       return options(
-            karafDistributionConfiguration()
-                  .frameworkUrl(
-                        maven()
-                              .groupId("org.apache.karaf")
-                              .artifactId("apache-karaf")
-                              .type("zip")
-                              .version(KARAF_VERSION))
-                  .karafVersion(KARAF_VERSION),
-            features(maven().groupId("org.infinispan")
-                           .artifactId("infinispan-core")
-                           .type("xml")
-                           .classifier("features")
-                           .versionAsInProject(), "infinispan-core"),
-            //install the infinispan-test-jar through a feature file as PAX-EXAM fails to deploy any jars that are not bundles
-            features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-tests"),
+            karafContainer(),
+            featureIspnCore(),
+            featureIspnCoreTests(),
             junitBundles(),
             keepRuntimeFolder()
       );

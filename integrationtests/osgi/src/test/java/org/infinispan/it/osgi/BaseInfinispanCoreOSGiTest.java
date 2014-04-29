@@ -20,8 +20,8 @@ public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTe
    public Option[] config() throws Exception {
       return options(
             karafContainer(),
-            featureIspnCore(),
-            featureIspnCoreTests(),
+            featureIspnCoreDependencies(),
+            ispnCorePlusTests(),
             junitBundles(),
             keepRuntimeFolder()
       );

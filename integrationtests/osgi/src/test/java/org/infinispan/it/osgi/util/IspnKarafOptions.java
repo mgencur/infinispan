@@ -3,7 +3,7 @@ package org.infinispan.it.osgi.util;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.options.RawUrlReference;
 
-import static org.ops4j.pax.exam.CoreOptions.maven;
+import static org.ops4j.pax.exam.CoreOptions.*;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 
@@ -32,6 +32,10 @@ public class IspnKarafOptions {
                             .versionAsInProject(), "infinispan-core");
    }
 
+   public static Option ispnCorePlusTests() {
+      return features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-plus-tests");
+   }
+
    public static Option featureLevelDbJni() {
       return features(maven().groupId("org.infinispan")
                             .artifactId("infinispan-cachestore-leveldb")
@@ -40,8 +44,20 @@ public class IspnKarafOptions {
                             .versionAsInProject(), "infinispan-cachestore-leveldb-jni");
    }
 
+   public static Option featureRemoteStore() {
+      return features(maven().groupId("org.infinispan")
+                            .artifactId("infinispan-cachestore-remote")
+                            .type("xml")
+                            .classifier("features")
+                            .versionAsInProject(), "infinispan-cachestore-remote");
+   }
+
    public static Option featureIspnCoreTests() {
       return features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-tests");
+   }
+
+   public static Option featureIspnCoreDependencies() {
+      return features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-deps");
    }
 
 }

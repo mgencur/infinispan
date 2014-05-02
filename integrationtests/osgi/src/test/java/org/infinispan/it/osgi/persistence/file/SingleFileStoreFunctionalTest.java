@@ -36,7 +36,7 @@ public class SingleFileStoreFunctionalTest extends org.infinispan.persistence.fi
       return options(
             karafContainer(),
             featureIspnCoreDependencies(),
-            ispnCorePlusTests(),
+            featureIspnCorePlusTests(),
             junitBundles(),
             keepRuntimeFolder()
       );

@@ -32,7 +32,7 @@ public class IspnKarafOptions {
                             .versionAsInProject(), "infinispan-core");
    }
 
-   public static Option ispnCorePlusTests() {
+   public static Option featureIspnCorePlusTests() {
       return features(new RawUrlReference(TEST_UTILS_FEATURE_FILE), "infinispan-core-plus-tests");
    }
 

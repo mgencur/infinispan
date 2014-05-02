@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.PaxExam;
-import org.ops4j.pax.exam.options.RawUrlReference;
 import org.ops4j.pax.exam.spi.reactors.ExamReactorStrategy;
 import org.ops4j.pax.exam.spi.reactors.PerClass;
 
@@ -42,7 +41,7 @@ public class RemoteStoreFunctionalTest extends BaseStoreFunctionalTest {
       return options(
             karafContainer(),
             featureIspnCoreDependencies(),
-            ispnCorePlusTests(),
+            featureIspnCorePlusTests(),
             featureRemoteStore(),
             junitBundles(),
             keepRuntimeFolder()

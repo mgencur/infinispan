@@ -12,7 +12,6 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRunti
 /**
  * @author mgencur
  *
- *  TODO: Make infinispan-core:tests a bundle. Current approach fails in Karaf 3.0.0
  */
 public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTest {
 
@@ -21,7 +20,7 @@ public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTe
       return options(
             karafContainer(),
             featureIspnCoreDependencies(),
-            ispnCorePlusTests(),
+            featureIspnCorePlusTests(),
             junitBundles(),
             keepRuntimeFolder()
       );

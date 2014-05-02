@@ -1,6 +1,8 @@
 package org.infinispan.it.osgi;
 
 import org.infinispan.Cache;
+import org.infinispan.configuration.cache.ConfigurationBuilder;
+import org.infinispan.configuration.global.GlobalConfigurationBuilder;
 import org.infinispan.manager.DefaultCacheManager;
 import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.test.TestingUtil;
@@ -25,9 +27,26 @@ import static org.junit.Assert.assertEquals;
 public class BasicInfinispanOSGiTest extends BaseInfinispanCoreOSGiTest {
 
    @Test
-   public void testLoadConfigFile() throws IOException {
+   public void testCustomIspnConfigFile() throws IOException {
       URL configURL = BasicInfinispanOSGiTest.class.getClassLoader().getResource("infinispan.xml");
       EmbeddedCacheManager cacheManager = new DefaultCacheManager(configURL.openStream());
+      try {
+         Cache<String, String> cache = cacheManager.getCache();
+         cache.put("k1", "v1");
+         assertEquals("v1", cache.get("k1"));
+      } finally {
+         TestingUtil.killCacheManagers(cacheManager);
+      }
+   }
+
+   @Test
+   public void testCustomJGroupsConfigFile() throws IOException {
+      //URL configURL = BasicInfinispanOSGiTest.class.getClassLoader().getResource("udp.xml");
+      GlobalConfigurationBuilder glob = new GlobalConfigurationBuilder().clusteredDefault();
+      glob.transport().nodeName("xx").addProperty("configurationFile", "stacks/udp.xml");
+      ConfigurationBuilder loc = new ConfigurationBuilder();
+
+      EmbeddedCacheManager cacheManager = new DefaultCacheManager(glob.build(), loc.build(), true);
       try {
          Cache<String, String> cache = cacheManager.getCache();
          cache.put("k1", "v1");

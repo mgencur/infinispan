@@ -42,7 +42,7 @@ public class JniLevelDBStoreFunctionalTest extends BaseStoreFunctionalTest {
       return options(
             karafContainer(),
             featureIspnCoreDependencies(),
-            ispnCorePlusTests(),
+            featureIspnCorePlusTests(),
             featureLevelDbJni(),
             junitBundles(),
             keepRuntimeFolder()

@@ -96,7 +96,7 @@
          !org.infinispan.commons.*,
          org.infinispan.marshall.core,
          org.infinispan.*;version=${project.version};-split-package:=error,
-         stacks
+         stacks,
       </project.exports>
    </properties>
 
@@ -148,25 +148,6 @@
                            ${project.groupId}.commons.util.concurrent;version=${project.version},
                            ${project.groupId}.commons.util.concurrent.jdk8backported;version=${project.version},
                            ${project.groupId}.commons.*;version=${project.version},
-                           <!--com.arjuna.ats.arjuna,-->
-                           <!--com.arjuna.ats.arjuna.common,-->
-                           <!--com.arjuna.ats.arjuna.coordinator,-->
-                           <!--com.arjuna.ats.arjuna.exceptions,-->
-                           <!--com.arjuna.ats.arjuna.logging,-->
-                           <!--com.arjuna.ats.arjuna.objectstore,-->
-                           <!--com.arjuna.ats.arjuna.recovery,-->
-                           <!--com.arjuna.ats.arjuna.state,-->
-                           <!--com.arjuna.ats.arjuna.tools,-->
-                           <!--com.arjuna.ats.arjuna.utils,-->
-                           <!--com.arjuna.ats.internal.arjuna,-->
-                           <!--com.arjuna.ats.internal.arjuna.common,-->
-                           <!--com.arjuna.ats.internal.arjuna.coordinator,-->
-                           <!--com.arjuna.ats.internal.arjuna.recovery,-->
-                           <!--com.arjuna.ats.internal.arjuna.thread,-->
-                           <!--com.arjuna.ats.internal.arjuna.tools,-->
-                           <!--com.arjuna.ats.internal.arjuna.utils,-->
-                           <!--com.arjuna.ats.internal.arjuna.objectstore,-->
-                           <!--com.arjuna.common.internal.util.propertyservice,-->
                            javax.management,javax.naming,
                            javax.security.*,
                            javax.transaction;version="[1.1,2)",
@@ -196,6 +177,10 @@
                            org.w3c.dom,
                            org.xml.sax
                         </Import-Package>
+                        <!--
+                           JGroups couldn't find TEST_PING protocol which is defined in ISPN CORE TESTS,
+                           TODO: package just the TEST_PING protocol in a fragment and attach it to JGroups.
+                        -->
                         <Fragment-Host>org.jgroups;bundle-version=${version.jgroups}</Fragment-Host>
                      </instructions>
                   </configuration>

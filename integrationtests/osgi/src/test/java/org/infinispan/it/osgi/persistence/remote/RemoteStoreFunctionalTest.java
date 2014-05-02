@@ -67,7 +67,7 @@ public class RemoteStoreFunctionalTest extends BaseStoreFunctionalTest {
 
    @Test
    public void testRestoreTransactionalAtomicMap() throws Exception {
-      super.testRestoreTransactionalAtomicMap(this.getClass().getMethod("testRestoreTransactionAtomicMap"));
+      super.testRestoreTransactionalAtomicMap(this.getClass().getMethod("testRestoreTransactionalAtomicMap"));
    }
 
    @Test

@@ -14,7 +14,6 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRunti
 /**
  * @author mgencur
  * @author isavin
- *
  */
 public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTest {
 
@@ -31,21 +30,21 @@ public abstract class BaseInfinispanCoreOSGiTest extends MultipleCacheManagersTe
 
    @ProbeBuilder
    public TestProbeBuilder exportTestPackages(TestProbeBuilder probeBuilder) {
-       StringBuilder builder = new StringBuilder();
+      StringBuilder builder = new StringBuilder();
 
-       /* Export all test subpackages. */
-       Package[] pkgs = Package.getPackages();
-       for (Package pkg : pkgs) {
-           String pkgName = pkg.getName();
-           if (pkgName.startsWith("org.infinispan.it.osgi")) {
-               if (builder.length() > 0) {
-                   builder.append(",");
-               }
-               builder.append(pkgName);
-           }
-       }
+      /* Export all test subpackages. */
+      Package[] pkgs = Package.getPackages();
+      for (Package pkg : pkgs) {
+         String pkgName = pkg.getName();
+         if (pkgName.startsWith("org.infinispan.it.osgi")) {
+            if (builder.length() > 0) {
+               builder.append(",");
+            }
+            builder.append(pkgName);
+         }
+      }
 
-       probeBuilder.setHeader("Export-Package", builder.toString());
-       return probeBuilder;
+      probeBuilder.setHeader("Export-Package", builder.toString());
+      return probeBuilder;
    }
 }

@@ -25,9 +25,6 @@ import static org.ops4j.pax.exam.CoreOptions.options;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 
 /**
- * Test cloned from {@link org.infinispan.persistence.leveldb.JniLevelDBStoreFunctionalTest}
- * and modified for running in Karaf with JUnit.
- *
  * @author mgencur
  */
 @RunWith(PaxExam.class)

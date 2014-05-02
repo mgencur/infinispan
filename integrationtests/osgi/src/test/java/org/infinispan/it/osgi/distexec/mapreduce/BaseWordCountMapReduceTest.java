@@ -15,6 +15,9 @@ import static org.ops4j.pax.exam.CoreOptions.junitBundles;
 import static org.ops4j.pax.exam.CoreOptions.options;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 
+/**
+ * @author mgencur
+ */
 public abstract class BaseWordCountMapReduceTest extends org.infinispan.distexec.mapreduce.BaseWordCountMapReduceTest {
 
    @Configuration

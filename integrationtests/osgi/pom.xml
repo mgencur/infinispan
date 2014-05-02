@@ -97,6 +97,8 @@
          org.infinispan.marshall.core,
          org.infinispan.*;version=${project.version};-split-package:=error,
          stacks,
+         configs,
+         configs.xsite
       </project.exports>
    </properties>
 

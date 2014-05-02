@@ -75,7 +75,7 @@ public class SingleFileStoreFunctionalTest extends org.infinispan.persistence.fi
 
    @Test
    public void testRestoreTransactionalAtomicMap() throws Exception {
-      super.testRestoreTransactionalAtomicMap(this.getClass().getMethod("testRestoreTransactionAtomicMap"));
+      super.testRestoreTransactionalAtomicMap(this.getClass().getMethod("testRestoreTransactionalAtomicMap"));
    }
 
    @Test

@@ -39,23 +39,6 @@ public class BasicInfinispanOSGiTest extends BaseInfinispanCoreOSGiTest {
       }
    }
 
-   @Test
-   public void testCustomJGroupsConfigFile() throws IOException {
-      //URL configURL = BasicInfinispanOSGiTest.class.getClassLoader().getResource("udp.xml");
-      GlobalConfigurationBuilder glob = new GlobalConfigurationBuilder().clusteredDefault();
-      glob.transport().nodeName("xx").addProperty("configurationFile", "stacks/udp.xml");
-      ConfigurationBuilder loc = new ConfigurationBuilder();
-
-      EmbeddedCacheManager cacheManager = new DefaultCacheManager(glob.build(), loc.build(), true);
-      try {
-         Cache<String, String> cache = cacheManager.getCache();
-         cache.put("k1", "v1");
-         assertEquals("v1", cache.get("k1"));
-      } finally {
-         TestingUtil.killCacheManagers(cacheManager);
-      }
-   }
-
    @Override
    protected void createCacheManagers() throws Throwable {
       //not used

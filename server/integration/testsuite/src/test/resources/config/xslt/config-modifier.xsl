@@ -1,12 +1,12 @@
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:logging="urn:jboss:domain:logging:1.2"
-                xmlns:p="urn:jboss:domain:1.4"
+                xmlns:logging="urn:jboss:domain:logging:2.0"
+                xmlns:p="urn:jboss:domain:2.1"
                 xmlns:jgroups="urn:jboss:domain:jgroups:1.2"
                 xmlns:core="urn:infinispan:server:core:7.0"
                 xmlns:threads="urn:jboss:domain:threads:1.1"
                 xmlns:security="urn:jboss:domain:security:1.2"
-                xmlns:datasources="urn:jboss:domain:datasources:1.1"
+                xmlns:datasources="urn:jboss:domain:datasources:2.0"
                 xmlns:endpoint="urn:infinispan:server:endpoint:7.0">
     <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
 

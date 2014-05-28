@@ -1,5 +1,7 @@
 package org.infinispan.server.test.jmx.suppress.statetransfer;
 
+import static org.infinispan.server.test.util.TestUtil.SERVER1_MGMT_PORT;
+import static org.infinispan.server.test.util.TestUtil.SERVER2_MGMT_PORT;
 import org.infinispan.arquillian.utils.MBeanServerConnectionProvider;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.server.test.util.RemoteCacheManagerFactory;
@@ -31,8 +33,8 @@ public class StateTransferSuppressForHotrodTest extends AbstractStateTransferSup
         cache1 = rcmFactory.createCache(mbean(0));
         cache2 = rcmFactory.createCache(mbean(1));
 
-        providers.add(new MBeanServerConnectionProvider(server(0).getHotrodEndpoint().getInetAddress().getHostName(), managementPort));
-        providers.add(new MBeanServerConnectionProvider(server(1).getHotrodEndpoint().getInetAddress().getHostName(), managementPort + 100));
+        providers.add(new MBeanServerConnectionProvider(server(0).getHotrodEndpoint().getInetAddress().getHostName(), SERVER1_MGMT_PORT));
+        providers.add(new MBeanServerConnectionProvider(server(1).getHotrodEndpoint().getInetAddress().getHostName(), SERVER2_MGMT_PORT));
     }
 
     @Override
@@ -66,6 +68,6 @@ public class StateTransferSuppressForHotrodTest extends AbstractStateTransferSup
 
     @Override
     protected void createNewProvider(int idx) {
-        providers.add(new MBeanServerConnectionProvider(server(idx).getHotrodEndpoint().getInetAddress().getHostName(), managementPort + idx * 100));
+        providers.add(new MBeanServerConnectionProvider(server(idx).getHotrodEndpoint().getInetAddress().getHostName(), SERVER1_MGMT_PORT + idx * 100));
     }
 }

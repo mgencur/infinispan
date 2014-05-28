@@ -1,5 +1,10 @@
 package org.infinispan.server.test.security.jgroups.encrypt;
 
+import static org.infinispan.server.test.util.TestUtil.SERVER1_MGMT_PORT;
+import static org.infinispan.server.test.util.TestUtil.SERVER2_MGMT_PORT;
+import static org.infinispan.server.test.util.TestUtil.getAttribute;
+import static org.junit.Assert.assertEquals;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -17,9 +22,6 @@ import org.jboss.arquillian.test.api.ArquillianResource;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.infinispan.server.test.util.TestUtil.getAttribute;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Test JGroups' ENCRYPT protocol. Only proper registration of the protocol is tested, making
@@ -75,8 +77,8 @@ public class EncryptProtocolTest {
             controller.start(JOINING_NODE);
             RemoteInfinispanMBeans coordinator = RemoteInfinispanMBeans.create(servers, COORDINATOR_NODE, "memcachedCache", "clustered");
             RemoteInfinispanMBeans friend = RemoteInfinispanMBeans.create(servers, JOINING_NODE, "memcachedCache", "clustered");
-            MBeanServerConnectionProvider providerCoordinator = new MBeanServerConnectionProvider(coordinator.server.getHotrodEndpoint().getInetAddress().getHostName(), 9999);
-            MBeanServerConnectionProvider providerFriend = new MBeanServerConnectionProvider(friend.server.getHotrodEndpoint().getInetAddress().getHostName(), 10099);
+            MBeanServerConnectionProvider providerCoordinator = new MBeanServerConnectionProvider(coordinator.server.getHotrodEndpoint().getInetAddress().getHostName(), SERVER1_MGMT_PORT);
+            MBeanServerConnectionProvider providerFriend = new MBeanServerConnectionProvider(friend.server.getHotrodEndpoint().getInetAddress().getHostName(), SERVER2_MGMT_PORT);
             MemcachedClient mcCoordinator = new MemcachedClient(coordinator.server.getMemcachedEndpoint().getInetAddress().getHostName(),
                     coordinator.server.getMemcachedEndpoint().getPort());
             MemcachedClient mcFriend = new MemcachedClient(friend.server.getMemcachedEndpoint().getInetAddress().getHostName(),

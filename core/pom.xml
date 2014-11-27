@@ -191,6 +191,10 @@
       </pluginManagement>
       <plugins>
          <plugin>
+            <groupId>org.scala-tools</groupId>
+            <artifactId>maven-scala-plugin</artifactId>
+         </plugin>
+         <plugin>
             <groupId>org.jboss.maven.plugins</groupId>
             <artifactId>maven-injection-plugin</artifactId>
             <executions>

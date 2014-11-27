@@ -138,6 +138,13 @@
    <build>
       <resources>
          <resource>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <filtering>false</filtering>
+            <includes>
+               <include>**/*</include>
+            </includes>
+         </resource>
+         <resource>
             <directory>${project.build.outputDirectory}</directory>
             <filtering>false</filtering>
             <includes>
@@ -156,6 +163,10 @@
                <parallel>none</parallel>
                <groups>${defaultTestGroup}</groups>
             </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.scala-tools</groupId>
+            <artifactId>maven-scala-plugin</artifactId>
          </plugin>
          <plugin>
             <groupId>org.apache.felix</groupId>

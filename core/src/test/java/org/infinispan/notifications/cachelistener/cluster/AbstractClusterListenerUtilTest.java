@@ -258,7 +258,7 @@ public abstract class AbstractClusterListenerUtilTest extends MultipleCacheManag
       }
       verifySimpleModificationEvents(listener, key, expectedValue);
    }
-
+   
    protected void verifySimpleInsertionEvents(ClusterListener listener, Object key, Object expectedValue) {
       assertEquals(1, listener.events.size());
       CacheEntryEvent event = listener.events.get(0);
@@ -277,6 +277,16 @@ public abstract class AbstractClusterListenerUtilTest extends MultipleCacheManag
       assertEquals(expectedValue, event.getValue());
    }
 
+   protected void verifySimpleExpirationEvents(ClusterListener listener, int expectedNumEvents, Object key, Object expectedValue) {
+      eventually(() -> listener.events.size() >= expectedNumEvents);
+
+      CacheEntryEvent event = listener.events.get(expectedNumEvents - 1); //the index starts from 0
+
+      assertEquals(Event.Type.CACHE_ENTRY_EXPIRED, event.getType());
+      assertEquals(key, event.getKey());
+      assertEquals(expectedValue, event.getValue());
+   }
+   
    protected void waitUntilListenerInstalled(final Cache<?, ?> cache, final CheckPoint checkPoint) {
       CacheNotifier cn = TestingUtil.extractComponent(cache, CacheNotifier.class);
       final Answer<Object> forwardedAnswer = AdditionalAnswers.delegatesTo(cn);

@@ -12,8 +12,10 @@ import org.infinispan.arquillian.core.RemoteInfinispanServer;
 import org.infinispan.commons.logging.Log;
 import org.infinispan.commons.logging.LogFactory;
 import org.infinispan.server.test.util.ITestUtils.Condition;
+import org.infinispan.server.test.util.ManagementClient;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.infinispan.server.test.util.ITestUtils.eventually;
@@ -50,6 +52,8 @@ public abstract class AbstractSingleNodeMemcachedIT {
 
     protected abstract RemoteInfinispanServer getServer();
 
+    protected abstract int getMemcachedPort();
+
     public static class TestSerializable implements Serializable {
         private String content;
 
@@ -65,8 +69,8 @@ public abstract class AbstractSingleNodeMemcachedIT {
 
     @Before
     public void setUp() throws Exception {
-        mc = new MemcachedClient(MemcachedSingleNodeIT.ENCODING, getServer().getMemcachedEndpoint().getInetAddress()
-                .getHostName(), getServer().getMemcachedEndpoint().getPort(), 10000);
+        mc = new MemcachedClient(MemcachedSingleNodeDomainIT.ENCODING, getServer().getMemcachedEndpoint().getInetAddress()
+                .getHostName(), getMemcachedPort(), 10000);
         mc.delete(KEY_A);
         mc.delete(KEY_B);
         mc.delete(KEY_C);
@@ -1010,7 +1014,7 @@ public abstract class AbstractSingleNodeMemcachedIT {
         assertEquals("END", mc.readln());
     }
 
-    @Test
+    @Test(timeout = 5000)
     public void testPipeliningStats() throws Exception {
         mc.writeln("stats");
         mc.writeln("get " + KEY_B);

@@ -8,6 +8,6 @@ import org.junit.experimental.categories.Category;
  * @author <a href="mailto:mlinhard@redhat.com">Michal Linhard</a>
  * 
  */
-public class MemcachedClustered extends ClientClustered {
+public class MemcachedClusteredDomain extends ClientClustered {
 
 }

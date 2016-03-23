@@ -216,13 +216,8 @@
             <artifactId>h2</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wildfly.arquillian</groupId>
-            <artifactId>wildfly-arquillian-common</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.arquillian</groupId>
-            <artifactId>wildfly-arquillian-common-domain</artifactId>
+            <groupId>org.arquillian.container</groupId>
+            <artifactId>arquillian-container-chameleon</artifactId>
         </dependency>
         <dependency>
             <groupId>org.wildfly.core</groupId>
@@ -256,6 +251,10 @@
             <groupId>org.jboss.aesh</groupId>
             <artifactId>aesh</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.remotingjmx</groupId>
+            <artifactId>remoting-jmx</artifactId>
         </dependency>
     </dependencies>
 
@@ -324,11 +323,11 @@
         <suite.client.dist.config>testsuite/clustered-default-dist.xml</suite.client.dist.config>
         <suite.client.repl.config>testsuite/clustered-default-repl.xml</suite.client.repl.config>
         <suite.client.local.phase>integration-test</suite.client.local.phase>
-        <suite.client.local.domain.phase>none</suite.client.local.domain.phase>
-        <suite.client.dist.phase>integration-test</suite.client.dist.phase>
-        <suite.client.dist.domain.phase>none</suite.client.dist.domain.phase>
-        <suite.client.repl.phase>integration-test</suite.client.repl.phase>
-        <suite.client.repl.domain.phase>none</suite.client.repl.domain.phase>
+        <suite.client.local.domain.phase>integration-test</suite.client.local.domain.phase>
+        <suite.client.dist.phase>none</suite.client.dist.phase>
+        <suite.client.dist.domain.phase>integration-test</suite.client.dist.domain.phase>
+        <suite.client.repl.phase>none</suite.client.repl.phase>
+        <suite.client.repl.domain.phase>integration-test</suite.client.repl.domain.phase>
         <suite.security.phase>none</suite.security.phase>
         <suite.client.smoke.phase>none</suite.client.smoke.phase>
 
@@ -601,7 +600,6 @@
                         
                         <server.jmx.domain>jboss.datagrid-infinispan</server.jmx.domain>
                     </systemPropertyVariables>
-                    
                     <additionalClasspathElements>
                         <element>${driver.dir}/${driver.jar}</element>
                     </additionalClasspathElements>
@@ -857,48 +855,6 @@
     </build>
 
     <profiles>
-        <profile>
-            <id>standalone</id>
-            <activation>
-                <property>
-                    <name>!domain</name>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly.arquillian</groupId>
-                    <artifactId>wildfly-arquillian-container-managed</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.remotingjmx</groupId>
-                    <artifactId>remoting-jmx</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>domain</id>
-            <activation>
-                <property>
-                    <name>domain</name>
-                </property>
-            </activation>
-            <properties>
-                <suite.queries.phase>none</suite.queries.phase>
-                <suite.manual.phase>none</suite.manual.phase>
-                <suite.client.local.phase>none</suite.client.local.phase>
-                <suite.client.dist.phase>none</suite.client.dist.phase>
-                <suite.client.repl.phase>none</suite.client.repl.phase>
-                <suite.client.local.domain.phase>integration-test</suite.client.local.domain.phase>
-                <suite.client.dist.domain.phase>integration-test</suite.client.dist.domain.phase>
-                <suite.client.repl.domain.phase>integration-test</suite.client.repl.domain.phase>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.wildfly.arquillian</groupId>
-                    <artifactId>wildfly-arquillian-container-domain-managed</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
         <profile>
             <id>suite.client</id>
             <properties>

@@ -5,6 +5,7 @@
     <group qualifier="suite-manual">
         <container qualifier="hotrod-rolling-upgrade-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -18,6 +19,7 @@
         </container>
         <container qualifier="hotrod-rolling-upgrade-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -32,6 +34,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -44,6 +47,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -58,6 +62,7 @@
         </container>
         <container qualifier="clustered-jdbc" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -68,6 +73,7 @@
         </container>
         <container qualifier="clustered-storage-only-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -80,6 +86,7 @@
         </container>
         <container qualifier="clustered-storage-only-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -94,6 +101,7 @@
         </container>
         <container qualifier="clustered-topology-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -106,6 +114,7 @@
         </container>
         <container qualifier="clustered-topology-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -125,6 +134,7 @@
         </container>
         <container qualifier="clustered-topology-3" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.dist}</property>
                 <property name="managementAddress">${node2.ip}</property>
@@ -144,6 +154,7 @@
         </container>
         <container qualifier="clustered-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -156,6 +167,7 @@
         </container>
         <container qualifier="clustered-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -170,6 +182,7 @@
         </container>
         <container qualifier="clustered-xsite-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -182,6 +195,7 @@
         </container>
         <container qualifier="clustered-xsite-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -196,6 +210,7 @@
         </container>
         <container qualifier="clustered-xsite-3" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.dist}</property>
                 <property name="managementAddress">${node2.ip}</property>
@@ -210,6 +225,7 @@
         </container>
         <container qualifier="standalone-fcs-local" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -221,6 +237,7 @@
         </container>
         <container qualifier="standalone-hotrod-multiple" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -232,6 +249,7 @@
         </container>
         <container qualifier="standalone-rcs-local-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -244,6 +262,7 @@
         </container>
         <container qualifier="standalone-rcs-local-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -258,6 +277,7 @@
         </container>
         <container qualifier="standalone-hotrod-ssl" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -269,6 +289,7 @@
         </container>
         <container qualifier="standalone-leveldb-cs-local" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -280,6 +301,7 @@
         </container>
         <container qualifier="standalone-compatibility-mode" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -291,6 +313,7 @@
         </container>
         <container qualifier="jmx-management-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -303,6 +326,7 @@
         </container>
         <container qualifier="jmx-management-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -317,6 +341,7 @@
         </container>
         <container qualifier="leveldb" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -331,6 +356,7 @@
         </container>
         <container qualifier="asymmetric-cluster-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -343,6 +369,7 @@
         </container>
         <container qualifier="asymmetric-cluster-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -357,6 +384,7 @@
         </container>
         <container qualifier="rest-security-basic" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -370,6 +398,7 @@
         </container>
         <container qualifier="rest-security-cert" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -384,6 +413,7 @@
         </container>
         <container qualifier="rest-security-digest" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -398,6 +428,7 @@
         </container>
         <container qualifier="standalone-rcs-local" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -412,6 +443,7 @@
         </container>
         <container qualifier="standalone-rcs-remote" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -427,6 +459,7 @@
         </container>
         <container qualifier="clustered-encrypt-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -440,6 +473,7 @@
         </container>
         <container qualifier="clustered-encrypt-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -454,6 +488,7 @@
         </container>
         <container qualifier="suppress-state-transfer-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -466,6 +501,7 @@
         </container>
         <container qualifier="suppress-state-transfer-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -480,6 +516,7 @@
         </container>
         <container qualifier="suppress-state-transfer-3" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.dist}</property>
                 <property name="managementAddress">${node2.ip}</property>
@@ -494,6 +531,7 @@
         </container>
         <container qualifier="transport-stack-tcp" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -507,6 +545,7 @@
         </container>
         <container qualifier="transport-stack-udp" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -521,6 +560,7 @@
         </container>
         <container qualifier="standalone-filecs" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -532,6 +572,7 @@
         </container>
         <container qualifier="eviction" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -544,6 +585,7 @@
         </container>
         <container qualifier="standalone-customtask" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -557,6 +599,7 @@
         </container>
         <container qualifier="standalone-customcs" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -569,6 +612,7 @@
         </container>
         <container qualifier="expiration-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -581,6 +625,7 @@
         </container>
         <container qualifier="expiration-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -596,6 +641,7 @@
 
         <container qualifier="jdbc" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -609,6 +655,7 @@
 
         <container qualifier="jdbc-cachestore-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -621,6 +668,7 @@
         </container>
         <container qualifier="jdbc-cachestore-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -635,6 +683,7 @@
         </container>
         <container qualifier="l1-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -647,6 +696,7 @@
         </container>
         <container qualifier="l1-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -661,6 +711,7 @@
         </container>
         <container qualifier="cachecontainer" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -673,6 +724,7 @@
         </container>
         <container qualifier="clusteredcache-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -685,6 +737,7 @@
         </container>
         <container qualifier="clusteredcache-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -698,6 +751,7 @@
         </container>
         <container qualifier="hotrodAuthClustered" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -711,6 +765,7 @@
         </container>
         <container qualifier="hotrodAuthClustered-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -725,6 +780,7 @@
         </container>
         <container qualifier="hotrodAuthKrb" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -739,6 +795,7 @@
         </container>
         <container qualifier="hotrodAuthQop" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -753,6 +810,7 @@
         </container>
         <container qualifier="hotrodAuthLdap" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -767,6 +825,7 @@
         </container>
         <container qualifier="hotrodAuthLdapOverSsl" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -781,6 +840,7 @@
         </container>
         <container qualifier="hotrodAuthzLdap" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -795,6 +855,7 @@
         </container>
         <container qualifier="clustered-sasl-md5-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -808,6 +869,7 @@
         </container>
         <container qualifier="clustered-sasl-md5-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -822,6 +884,7 @@
         </container>
         <container qualifier="clustered-sasl-krb-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -835,6 +898,7 @@
         </container>
         <container qualifier="clustered-sasl-krb-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -849,6 +913,7 @@
         </container>
         <container qualifier="another-clustered-sasl-md5-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -862,6 +927,7 @@
         </container>
         <container qualifier="hotrodAuth" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -879,6 +945,7 @@
     <group qualifier="queries">
         <container qualifier="remote-query-1" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -891,6 +958,7 @@
         </container>
         <container qualifier="remote-query-2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -905,6 +973,7 @@
         </container>
         <container qualifier="remote-query-security" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.dist}</property>
                 <property name="managementAddress">${node2.ip}</property>
@@ -920,6 +989,7 @@
     <group qualifier="suite-client-local">
         <container qualifier="container1" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -934,6 +1004,7 @@
         </container>
         <container qualifier="container2" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -951,6 +1022,7 @@
     <group qualifier="suite-client-dist">
         <container qualifier="container1" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -965,6 +1037,7 @@
         </container>
         <container qualifier="container2" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -983,6 +1056,7 @@
     <group qualifier="suite-client-repl">
         <container qualifier="container1" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -997,6 +1071,7 @@
         </container>
         <container qualifier="container2" mode="suite">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -1014,6 +1089,7 @@
 
     <container qualifier="suite-client-domain" default="true">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:domain</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementPort">9990</property>
                 <property name="allowConnectingToRunningServer">true</property>
@@ -1025,6 +1101,7 @@
          <!-- No dist case, just target: node0 and source: node1 -->
         <container qualifier="hotrod-rolling-upgrade-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -1039,6 +1116,7 @@
         </container>
         <container qualifier="hotrod-rolling-upgrade-2-old" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server.old.dist}</property>
                 <property name="allowConnectingToRunningServer">true</property>
@@ -1054,6 +1132,7 @@
          <!--REST Rolling Upgrades -->
         <container qualifier="rest-rolling-upgrade-1" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="allowConnectingToRunningServer">true</property>
@@ -1067,6 +1146,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-2-old" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server.old.dist}</property>
                 <property name="serverConfig">standalone.xml</property>
@@ -1083,6 +1163,7 @@
         <!-- Dist case, source: node0 and node1, targets: node2 and node3 -->
         <container qualifier="hotrod-rolling-upgrade-1-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -1098,6 +1179,7 @@
         </container>
         <container qualifier="hotrod-rolling-upgrade-2-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -1113,6 +1195,7 @@
         </container>
         <container qualifier="hotrod-rolling-upgrade-3-old-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.old.dist}</property>
                 <property name="serverConfig">clustered.xml</property>
@@ -1126,6 +1209,7 @@
         </container>
         <container qualifier="hotrod-rolling-upgrade-4-old-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.old.dist}</property>
                 <property name="serverConfig">clustered.xml</property>
@@ -1141,6 +1225,7 @@
         <!-- Dist case, source: node0 and node1, targets: node2 and node3 -->
         <container qualifier="rest-rolling-upgrade-1-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server1.dist}</property>
                 <property name="managementAddress">${node0.ip}</property>
@@ -1156,6 +1241,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-2-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.dist}</property>
                 <property name="managementAddress">${node1.ip}</property>
@@ -1171,6 +1257,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-3-old-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server2.old.dist}</property>
                 <property name="serverConfig">clustered.xml</property>
@@ -1184,6 +1271,7 @@
         </container>
         <container qualifier="rest-rolling-upgrade-4-old-dist" mode="manual">
             <configuration>
+                <property name="chameleonTarget">wildfly:${version.org.wildfly}:managed</property>
                 <property name="javaHome">${server.jvm}</property>
                 <property name="jbossHome">${server3.old.dist}</property>
                 <property name="serverConfig">clustered.xml</property>

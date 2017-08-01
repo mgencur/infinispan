@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutionException;
@@ -93,6 +94,52 @@ public class StrongCounterTest extends AbstractCounterTest<StrongTestCounter> {
          }
          assertFalse(counter.compareAndSet(notExpected, value));
          assertEquals(expect, counter.getValue());
+      }
+   }
+
+   public void testCompareAndSetConcurrent(Method method) throws ExecutionException, InterruptedException, TimeoutException {
+      final List<Future<LinkedList<Boolean>>> workers = new ArrayList<>(CLUSTER_SIZE);
+      final String counterName = method.getName();
+      final CyclicBarrier barrier = new CyclicBarrier(CLUSTER_SIZE);
+      final long maxIterations = 100;
+
+      for (int i = 0; i < CLUSTER_SIZE; ++i) {
+         final int cmIndex = i;
+         workers.add(fork(() -> {
+            long iteration = 0;
+            final long initialValue = 0;
+            LinkedList<Boolean> retValues = new LinkedList<>();
+            CounterManager manager = counterManager(cmIndex);
+            StrongTestCounter counter = createCounter(manager, counterName, initialValue);
+            final Random r = new Random();
+            while (iteration < maxIterations) {
+               long update = r.nextLong();
+               barrier.await();
+               //all threads calling compareAndSet at the same time, only one should succeed
+               boolean ret = counter.compareAndSet(initialValue, update);
+               //log.infof("Iteration %d, counter %d, success %s, expectedUpdate %d, realValue %d", iteration, cmIndex, ret, update, counter.getValue());
+               retValues.add(ret);
+               counter.reset();
+               ++iteration;
+            }
+            return retValues;
+         }));
+      }
+
+      List<LinkedList<Boolean>> workerList = new LinkedList<>();
+      for (Future<LinkedList<Boolean>> w : workers) {
+         LinkedList<Boolean> returnValues = w.get(1, TimeUnit.MINUTES);
+         workerList.add(returnValues);
+      }
+
+      for (int i = 0; i != maxIterations; i++) {
+         List<Boolean> headOfWorkers = new LinkedList<>();
+         for (LinkedList<Boolean> worker: workerList) {
+            headOfWorkers.add(worker.removeFirst());
+         }
+         assertEquals("Incomplete results in iteration " + i, CLUSTER_SIZE, headOfWorkers.size());
+         assertEquals("Multiple threads succeeded with update in iteration " + i,
+                 1, headOfWorkers.stream().filter(Boolean::booleanValue).count());
       }
    }
 

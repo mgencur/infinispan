@@ -66,7 +66,8 @@ public class RemoteQueryDslConditionsTest extends QueryDslConditionsTest {
          "}\n";
 
    private static final String CUSTOM_ANALYZER_PROTO_SCHEMA = "package sample_bank_account;\n" +
-         "/* @Indexed */\n" +
+         "/* @Indexed \n" +
+         "   @Analyzer(definition = \"standard\") */" +
          "message AnalyzerTestEntity {\n" +
          "\t/* @Field(store = Store.YES, analyze = Analyze.YES, analyzer = @Analyzer(definition = \"stemmer\")) */\n" +
          "\toptional string f1 = 1;\n" +
@@ -84,8 +85,9 @@ public class RemoteQueryDslConditionsTest extends QueryDslConditionsTest {
    protected void populateCache() throws Exception {
       super.populateCache();
 
-      getCacheForWrite().put("analyzed1", new AnalyzerTestEntity("testing 123", 3));
-      getCacheForWrite().put("analyzed2", new AnalyzerTestEntity("xyz", null));
+      getCacheForWrite().put("analyzed1", new AnalyzerTestEntity("photograph 123", 3));
+      getCacheForWrite().put("analyzed2", new AnalyzerTestEntity("photon 1234", 3));
+      getCacheForWrite().put("analyzed3", new AnalyzerTestEntity("xyz", null));
    }
 
    @Override
@@ -427,5 +429,14 @@ public class RemoteQueryDslConditionsTest extends QueryDslConditionsTest {
    public void testRejectAggregationsInWhereClause() {
       // the original exception gets wrapped in HotRodClientException
       super.testRejectAggregationsInWhereClause();
+   }
+
+   public void testCustomFieldAnalyzer() throws Exception {
+      QueryFactory qf = getQueryFactory();
+
+      Query q = qf.create("from sample_bank_account.AnalyzerTestEntity where f1:'photo'");
+
+      List<Object[]> list = q.list();
+      assertEquals(2, list.size());
    }
 }
